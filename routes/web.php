@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('truck&create','TruckController@create')->name('truck.create');
+Route::post('truck/store','TruckController@store')->name('truck.store');
+Route::get('trucks&update&id={truck}','TruckController@updateView')->name('truck.updateView');
+Route::post('trucks/update/{truck}','TruckController@update')->name('truck.update');
+Route::get('trucks/delete&id={truck}','TruckController@destroy')->name('truck.delete');
+
