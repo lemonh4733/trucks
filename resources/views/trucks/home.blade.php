@@ -9,7 +9,7 @@
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">
               {{$title}}
-              <small style="font-size: 14px"><a class="openFilter" href="#">Filtruoti</a></small>
+              <p style="font-size: 15px" class="mt-1 openFilter">Filtruoti</i></p>
             </h1>
         </div>
         <!-- Alert -->
@@ -54,6 +54,10 @@
                 @endforeach
             </tbody>
           </table>
+          <!-- Pagination -->
+          <div class="pagination d-flex justify-content-center">
+            <span id="page">{{$trucks->links()}}</span>
+          </div>
         @endif
 
         

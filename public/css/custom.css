@@ -1,3 +1,7 @@
 .filter {
     display: none;
 }
+.openFilter {
+    color: rgb(52, 52, 195);
+    cursor: pointer;
+}

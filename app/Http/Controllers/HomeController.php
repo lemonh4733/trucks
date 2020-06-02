@@ -17,8 +17,8 @@ class HomeController extends Controller
             'method' => 'GET',
             'url' => '/filter'
         ]);
-        $trucks = Truck::all();
-        $errorMessage = "Sunkvežimių nėra!";
+        $trucks = Truck::paginate(10);
+        $errorMessage = "Sunkvežimių nėra...";
         return view('trucks.home', compact('title', 'form', 'trucks', 'errorMessage'));
     }
 
@@ -38,8 +38,8 @@ class HomeController extends Controller
         //Filtravimo service
         $filterService->filter($truck, $request);
         //Gražina filtruotą obj
-        $trucks = $truck->paginate(10);
-        $errorMessage = "Nėra sunkvežimių atitinkančių jūsų paiešką!";
+        $trucks = $truck->paginate(10)->appends($request->all());
+        $errorMessage = "Nėra sunkvežimių atitinkančių jūsų paiešką...";
 
         return view('trucks.home', compact('title', 'form', 'trucks', 'errorMessage'));
     }
