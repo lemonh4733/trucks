@@ -176,6 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Kris\LaravelFormBuilder\FormBuilderServiceProvider::class,
+        EloquentFilter\ServiceProvider::class,
 
     ],
 

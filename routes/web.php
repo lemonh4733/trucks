@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('filter','HomeController@filter')->name('filter');
 
 Route::get('truck&create','TruckController@create')->name('truck.create');
 Route::post('truck/store','TruckController@store')->name('truck.store');

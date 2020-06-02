@@ -7,7 +7,10 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">{{$title}}</h1>
+            <h1 class="h3 mb-0 text-gray-800">
+              {{$title}}
+              <small style="font-size: 14px"><a class="openFilter" href="#">Filtruoti</a></small>
+            </h1>
         </div>
         <!-- Alert -->
         @if(Session::has('success'))
@@ -17,7 +20,13 @@
             <p class="alert alert-danger">{{ Session::get('danger') }}</p>
         @endif
         <!-- Content -->
-        <table class="table">
+        <div class="filter">
+          {!! form($form) !!}
+        </div>
+        @if(count($trucks) === 0)
+          <p>{{$errorMessage}}</p>
+        @else
+          <table class="table">
             <thead>
               <tr>
                 <th scope="col">#</th>
@@ -45,6 +54,9 @@
                 @endforeach
             </tbody>
           </table>
+        @endif
+
+        
           
 
 
@@ -52,5 +64,6 @@
     <!-- /.container-fluid -->
 
   </div>
+  <script src="js/filter.js"></script>
   <!-- End of Main Content -->
   @endsection

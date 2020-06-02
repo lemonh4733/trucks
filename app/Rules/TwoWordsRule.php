@@ -25,7 +25,7 @@ class TwoWordsRule implements Rule
      */
     public function passes($attribute, $value)
     {
-        return count(explode(' ', $value)) === 2;
+        return count(explode(' ', $value)) >= 2;
     }
 
     /**
@@ -35,6 +35,6 @@ class TwoWordsRule implements Rule
      */
     public function message()
     {
-        return 'Vardą ir pavardę sudaro 2 žodžiai.';
+        return 'Vardą ir pavardę sudaro bent 2 žodžiai.';
     }
 }
