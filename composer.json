@@ -14,8 +14,7 @@
         "guzzlehttp/guzzle": "^6.3",
         "kris/laravel-form-builder": "^1.30",
         "laravel/framework": "^7.0",
-        "laravel/tinker": "^2.0",
-        "tucker-eric/eloquentfilter": "^2.3"
+        "laravel/tinker": "^2.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
