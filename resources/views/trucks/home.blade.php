@@ -6,7 +6,7 @@
     <div class="container-fluid mt-5">
 
         <!-- Page Heading -->
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <div class="d-sm-flex align-items-center justify-content-between mb-2">
             <h1 class="h3 mb-0 text-gray-800">
               {{$title}}
               <p style="font-size: 15px" class="mt-1 openFilter">Filtruoti</i></p>
@@ -21,8 +21,12 @@
         @endif
         <!-- Content -->
         <div class="filter">
-          {!! form($form) !!}
+          
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0 mb-2">
+            {!! form($form) !!}
         </div>
+        
         @if(count($trucks) === 0)
           <p>{{$errorMessage}}</p>
         @else
@@ -54,6 +58,8 @@
                 @endforeach
             </tbody>
           </table>
+          <!-- Divider -->
+          <hr class="sidebar-divider my-0 mb-2">
           <!-- Pagination -->
           <div class="pagination d-flex justify-content-center">
             <span id="page">{{$trucks->links()}}</span>

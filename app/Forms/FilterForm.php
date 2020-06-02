@@ -11,26 +11,27 @@ class FilterForm extends Form
         $thisYear = now()->year;
         $this
             ->add('model', 'checkbox', [
-                'label' => 'Rikiuoti pagal modelį',
+                'label' => 'Rikiuoti pagal modelį abėcėlės tvarka',
                 'rules' => 'min:0|max:1',
             ])
             ->add('more_than', 'number', [
-                'label' => 'Metai nuo',
+                'label' => 'Metai nuo:',
                 'rules' => 'max:'.$thisYear,
             ] )
             ->add('less_than', 'number', [
-                'label' => 'Metai iki',
+                'label' => 'Metai iki:',
                 'rules' => 'max:'.$thisYear,
             ])
             ->add('owner', 'text', [
-                'label' => 'Savininko vardas'
+                'label' => 'Savininko vardas:',
             ])
             ->add('numb_of_owners', 'number', [
-                'label' => 'Savininkų skaičius',
+                'label' => 'Savininkų skaičius:',
                 'rules' => 'max:100',
             ])
             ->add('submit', 'submit', [
-                'label' => 'Filtruoti'
+                'label' => 'Filtruoti',
+                'attr' => ['class' => 'btn-success btn w-100 mb-3'],
             ]);
     }
 }
