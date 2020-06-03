@@ -38,6 +38,7 @@ class TruckController extends Controller
         $form = $formBuilder->create(TruckForm::class, [
             'method' => 'POST',
             'url' => 'trucks/update/'.$truck->id,
+            'model' => $truck
         ]);
         return view('trucks.add-truck', compact('form', 'title'));
     }

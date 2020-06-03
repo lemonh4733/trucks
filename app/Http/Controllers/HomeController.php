@@ -11,7 +11,7 @@ use App\Services\FilterService;
 
 class HomeController extends Controller
 {
-    public function index(FormBuilder $formBuilder) {
+    public function index(FormBuilder $formBuilder, Request $request) {
         $title = 'Pagrindinis';
         $form = $formBuilder->create(FilterForm::class, [
             'method' => 'GET',
@@ -31,7 +31,7 @@ class HomeController extends Controller
         if (!$form->isValid()) {
             return redirect()->back()->withErrors($form->getErrors())->withInput();
         }
-        //Paima sunkvežimius ir jų modelius
+        //Paima sunkvežimius ir jų modelius(brandus)
         $truck = Truck::query()
                 ->select('*', 'trucks.id as id')
                 ->join('brands', 'trucks.brand_id', 'brands.id');
